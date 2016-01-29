@@ -1,0 +1,28 @@
+{
+  "name": "github-profiles",
+  "homepage": "https://github.com/giamir/todo_challenge",
+  "authors": [
+    "giamir <giamirbuoncristiani@gmail.com>"
+  ],
+  "description": "Todo list mini front-end application with Angular.js",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9",
+    "angular-resource": "~1.4.9"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.9",
+    "angular-route": "~1.4.9"
+  }
+}

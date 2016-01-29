@@ -1,0 +1,50 @@
+{
+  "name": "todo_challenge",
+  "version": "1.0.0",
+  "description": "Todo list mini front-end application with Angular.js",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "grunt test",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/giamir/todo_challenge.git"
+  },
+  "author": "Giamir Buoncristiani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/giamir/todo_challenge/issues"
+  },
+  "homepage": "https://github.com/giamir/todo_challenge#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-express-server": "^0.5.1",
+    "grunt-karma": "^0.12.1",
+    "grunt-protractor-runner": "^3.0.0",
+    "grunt-protractor-webdriver": "^0.2.5",
+    "jasmine-core": "^2.4.1",
+    "jasmine-reporters": "^2.1.1",
+    "karma": "^0.13.19",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.3",
+    "karma-spec-reporter": "0.0.23",
+    "nodemon": "^1.8.1",
+    "phantomjs": "^1.9.19",
+    "protractor": "^3.0.0",
+    "protractor-http-mock": "^0.2.1",
+    "selenium-standalone": "^4.8.0",
+    "webdriver-manager": "^8.0.0"
+  },
+  "dependencies": {
+    "bower": "^1.7.7",
+    "express": "^4.13.4",
+    "morgan": "^1.6.1"
+  }
+}
