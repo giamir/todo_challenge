@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="TodoList">
+<html lang="en" ng-app="ToDoList">
 <head>
   <meta charset="utf-8">
   <title>Todo List</title>
@@ -9,45 +9,34 @@
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/toDoListController.js"></script>
+  <script src="js/toDoListStorageFactory.js"></script>
 </head>
 
-<body class="container">
+<body class="container" ng-controller="ToDoListController as ctrl">
   <header class="row"></header>
   <section class="row">
-    <form class="form-horizontal text-center" name="insertTask">
-      <input type="text" placeholder="What needs to be done?" required>
+    <form class="form-horizontal text-center" name="insertTask" ng-submit="ctrl.addItem()">
+      <input type="text" placeholder="What needs to be done?" ng-model="ctrl.newItem" required autofocus>
     </form>
-    <ul class="items-result list-group">
-      <li class="list-group-item">
+    <ul class="items-result list-group" ng-show="ctrl.items.length">
+      <li class="list-group-item" ng-repeat="item in ctrl.filteredItems">
         <label>
-          <input type="checkbox">
-          Dapibus ac facilisis in
+          <input type="checkbox" ng-model="item.completed" ng-change="ctrl.toggleCompleted(item)">
+          {{item.title}}
         </label>
-        <a class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
-      </li>
-      <li class="list-group-item">
-        <label>
-          <input type="checkbox">
-          Dapibus ac facilisis in
-        </label>
-        <a class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
-      </li>
-      <li class="list-group-item">
-        <label>
-          <input type="checkbox">
-          Dapibus ac facilisis in
-        </label>
-        <a class="pull-right"><i class="glyphicon glyphicon-remove"></i></a>
+        <a href="#" class="pull-right remove" ng-click="ctrl.removeItem(item)"><i class="glyphicon glyphicon-remove"></i></a>
       </li>
     </ul>
     <section class="text-center">
-      <span class="pull-left">4 items left</span>
-      <div class="btn-group btn-group-sm" role="group" aria-label="All">
-        <button type="button" class="btn btn-default">All</button>
-        <button type="button" class="btn btn-default">Active</button>
-        <button type="button" class="btn btn-default">Complete</button>
+      <span class="pull-left"><strong>{{ctrl.remainingCount()}}</strong>
+        <ng-pluralize count="ctrl.remainingCount()" when="{ one: 'item left', other: 'items left' }"></ng-pluralize></span>
+      <div id="filters" class="btn-group btn-group-sm" role="group">
+        <button ng-click="ctrl.filter()" type="button" class="btn btn-default" id="all">All</button>
+        <button ng-click="ctrl.filter('active')" type="button" class="btn btn-default" id="active">Active</button>
+        <button ng-click="ctrl.filter('completed')" type="button" class="btn btn-default" id="completed">Completed</button>
       </div>
-      <a class="pull-right">Clear All</a>
+      <a href="#" class="pull-right clear-all" ng-click="ctrl.clearCompletedItems()">Clear All</a>
     </section>
   </section>
 </body>

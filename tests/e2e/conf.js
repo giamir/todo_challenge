@@ -2,10 +2,11 @@ exports.config = {
 
   seleniumAddress: 'http://localhost:4444/wd/hub',
   capabilities: { 'browserName': 'chrome' },
-  specs: ['todoListFeature.js'],
+  specs: ['toDoListFeature.js'],
 
   jasmineNodeOpts: {
-    showColors: true
+    showColors: true,
+    print: function() {}
   },
 
   onPrepare: function() {

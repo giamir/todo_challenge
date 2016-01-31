@@ -88,6 +88,17 @@
     "wsh"           : false,    // Windows Scripting Host
     "yui"           : false,    // Yahoo User Interface
 
-    // Custom Globals
-    "globals"       : { "toDoList": true, "angular": true, "karma": true }        // additional predefined global variables
+    "globals"    : {
+                      "toDoList": true,
+                      "angular": true,
+                      "inject": true,
+                      "protractor": true,
+                      "browser": true,
+                      "by": true,
+                      "element": true,
+                      "it": true,
+                      "describe": true,
+                      "beforeEach": true,
+                      "afterEach": true
+                    }
 }
