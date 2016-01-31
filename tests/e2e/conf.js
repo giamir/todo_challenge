@@ -9,11 +9,7 @@ exports.config = {
   },
 
   onPrepare: function() {
-    var jasmineReporters = require('jasmine-reporters');
-    jasmine.getEnv().addReporter(new jasmineReporters.TerminalReporter({
-      verbosity: 3,
-      color: true,
-      showStack: true
-    }));
+    var SpecReporter = require('jasmine-spec-reporter');
+    jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: 'all'}));
   }
 };
