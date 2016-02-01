@@ -88,17 +88,5 @@
     "wsh"           : false,    // Windows Scripting Host
     "yui"           : false,    // Yahoo User Interface
 
-    "globals"    : {
-                      "toDoList": true,
-                      "angular": true,
-                      "inject": true,
-                      "protractor": true,
-                      "browser": true,
-                      "by": true,
-                      "element": true,
-                      "it": true,
-                      "describe": true,
-                      "beforeEach": true,
-                      "afterEach": true
-                    }
+    "globals" : { "toDoList": true, "angular": true, "browser": true, "element": true, "expect": true, "by": true, "exports": true, "module": true, "inject": true, "protractor": true }
 }
